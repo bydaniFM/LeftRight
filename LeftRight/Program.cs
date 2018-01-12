@@ -43,6 +43,8 @@ namespace LeftRight
                 }
                 Console.WriteLine("Correct guess rate: " + (100 * (float)rightGuess / total));
 
+                totalElecs += opc;
+
                 if(totalElecs.Length - windowSize < 0)
                 {
                     predictGuess += opc;
@@ -64,7 +66,7 @@ namespace LeftRight
 
                 Console.WriteLine("Total guesses: " + totalElecs);
                 Console.WriteLine("Prediction guesses: " + predictGuess);
-                Console.WriteLine("Register guesses: " + predictGuess);
+                Console.WriteLine("Register guesses: " + registerGuess);
                 Console.ReadLine();
             }
         }

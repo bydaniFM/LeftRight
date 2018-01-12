@@ -15,6 +15,8 @@ namespace LeftRight
         public Predictor(string _possibleActions)
         {
             data = new Dictionary<string, DataRecord>();
+            possibleActions = _possibleActions;
+            rnd = new Random();
         }
 
         public string GetMostLikely(string actions)
@@ -31,12 +33,14 @@ namespace LeftRight
                     {
                         highestValue = keyData.counts[action];
                         bestAction = action;
+                        //Console.WriteLine("CONTROL1");
                     }
                 }
             }
             else
             {
                 bestAction = possibleActions[rnd.Next(possibleActions.Length)];
+                //Console.WriteLine("CONTROL2");
             }
             return bestAction.ToString();
         }
